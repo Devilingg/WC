@@ -1,0 +1,21 @@
+#include "stdio.h"
+#include "stdlib.h"
+
+
+void main()
+{
+    int i=0,f=0;
+	char ch;
+	FILE *fp;
+	fp=fopen("E:\\WC\\111.txt","r");
+    ch=fgetc(fp);
+	while(ch!=EOF)
+	{
+	   i++;
+	    if(ch=='\n')
+	      f++;
+	   ch=fgetc(fp);
+	}
+	printf("字符一共有%d个\n行数一共有%d行\n",i,f+1);
+	fclose(fp);
+}
